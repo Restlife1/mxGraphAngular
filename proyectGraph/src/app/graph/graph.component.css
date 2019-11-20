@@ -1,0 +1,11 @@
+#graphContainer{
+    background-color:rgb(255, 255, 159);
+    height: 100vh;
+    width: 100vw;
+    overflow: auto;
+}
+#toolbar{
+    background-color: lightblue;
+    height: 100%;
+    width: 50px;
+}
