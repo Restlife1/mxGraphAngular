@@ -1,17 +1,30 @@
 #graphContainer{
-    background-color:rgb(255, 255, 159);
     height: 100vh;
     width: 100vw;
     overflow: auto;
 }
-#toolbarVer{
-    background-color: lightblue;
-    height: 100%;
-    width: 50px;
-}
 
-#toolbarVer img{
+#tbContainer img{
     margin: 5%;
     height: 40px;
     width: 40px;
+    padding-top: 10px;
+}
+
+#tbContainer{
+    position: absolute;
+    background-color: lightblue;    
+    height: 100%;
+    width: 50px;
+    left: 0px;
+    bottom: 0px;
+}
+
+#container{
+    position: absolute;
+    background-color: rgb(252, 171, 96);
+    left: 50px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
 }
