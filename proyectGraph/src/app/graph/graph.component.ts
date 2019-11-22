@@ -112,16 +112,18 @@ private addToolbarItem(image)
 		// Function that is executed when the image is dropped on
 		// the graph. The cell argument points to the cell under
 		// the mousepointer if there is one.
-		var funct = function(graph, evt, cell)
+		var funct = function(graph: mxgraph.mxGraph, evt, cell)
 		{
 			graph.stopEditing(false);
 	
 			var pt = graph.getPointForEvent(evt);
+
+			//var doc = mx.mxUtil.createXmlDocument();
+
+			//var xml = mx.mxUtils.createElement();
 			
-			//var style = vertex.graph.getStylesheet().getDefaultParent();
-			//style.id = "vertexStyle"
-			
-			graph.setSelectionCells(graph.importCells([pt], 0, 0, cell));
+			graph.insertVertex(graph.getDefaultParent(), null, );
+
 		}
 	
 		// Creates the image which is used as the drag icon (preview)
