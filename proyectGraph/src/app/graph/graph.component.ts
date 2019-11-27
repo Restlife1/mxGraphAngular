@@ -20,6 +20,10 @@ export class GraphComponent implements AfterViewInit {
   
   private graph: mxgraph.mxGraph;
   private toolbar: mxgraph.mxToolbar;
+  private v1 = 'assets/images/square.png';
+  private v2 = 'assets/images/squareIn.png';
+  private v3 = 'assets/images/squareOut.png';
+  private v4 = 'assets/images/arrow1.png';
 
   constructor() { }
 
@@ -98,21 +102,111 @@ export class GraphComponent implements AfterViewInit {
 		var vertex = this.graph.insertVertex(parent, null, 'Funca', 20, 20, 80, 30, '');
 		this.graph.insertEdge(parent, null, '', vertex);*/
 		
-		this.addToolbarItem('assets/images/square.png');
-		this.addToolbarItem('assets/images/squareIn.png');
-		this.addToolbarItem('assets/images/squareOut.png');
-		this.addToolbarItem('assets/images/arrow1.png');
+		this.addToolbarItem(this.v1, 1);
+		this.addToolbarItem(this.v2, 2);
+		this.addToolbarItem(this.v3, 3);
+		this.addToolbarItem(this.v4, 4);
 		
 	}
 
 	
 }
-private addToolbarItem(image)
+private addToolbarItem(image, type)
 	{
 		// Function that is executed when the image is dropped on
 		// the graph. The cell argument points to the cell under
 		// the mousepointer if there is one.
-		var funct = function(graph: mxgraph.mxGraph, evt, cell)
+
+		switch(type){
+
+			case 1:
+				var functMainSquare = function(graph: mxgraph.mxGraph, evt, cell)
+				{
+					graph.stopEditing(false);
+			
+					var pt = graph.getPointForEvent(evt);
+
+					//var doc = mx.mxUtil.createXmlDocument();
+
+					//var xml = mx.mxUtils.createElement();
+					
+					var v1 = graph.insertVertex(graph.getDefaultParent(), null, "Yep", pt.x, pt.y, 120, 70, '');
+					v1.setConnectable(false);		//Poniendolo a true se conectan las cajas mediante las flechas internas
+
+					
+				}
+
+				var img = this.toolbar.addMode(null, image, functMainSquare);
+		mx.mxUtils.makeDraggable(img, this.graph, functMainSquare);
+
+			break;
+
+			case 2:
+				var functGreenSquare = function(graph: mxgraph.mxGraph, evt, cell)
+				{
+					graph.stopEditing(false);
+			
+					var pt = graph.getPointForEvent(evt);
+
+					//var doc = mx.mxUtil.createXmlDocument();
+
+					//var xml = mx.mxUtils.createElement();
+					
+					var v1 = graph.insertVertex(graph.getDefaultParent(), null, "Yep", pt.x, pt.y, 50, 70, '');
+					v1.setConnectable(false);		//Poniendolo a true se conectan las cajas mediante las flechas internas
+
+				}
+
+				var img = this.toolbar.addMode(null, image, functGreenSquare);
+				mx.mxUtils.makeDraggable(img, this.graph, functGreenSquare);
+
+			break;
+
+			case 3:
+				var functRedSquare = function(graph: mxgraph.mxGraph, evt, cell)
+				{
+					graph.stopEditing(false);
+			
+					var pt = graph.getPointForEvent(evt);
+
+					//var doc = mx.mxUtil.createXmlDocument();
+
+					//var xml = mx.mxUtils.createElement();
+					
+					var v1 = graph.insertVertex(graph.getDefaultParent(), null, "Yep", pt.x, pt.y, 30, 30, '');
+					v1.setConnectable(false);		//Poniendolo a true se conectan las cajas mediante las flechas internas
+
+				}
+
+				var img = this.toolbar.addMode(null, image, functRedSquare);
+				mx.mxUtils.makeDraggable(img, this.graph, functRedSquare);
+
+			break;
+
+			case 4:
+				var functArrow = function(graph: mxgraph.mxGraph, evt, cell)
+				{
+					graph.stopEditing(false);
+			
+					var pt = graph.getPointForEvent(evt);
+
+					//var doc = mx.mxUtil.createXmlDocument();
+
+					//var xml = mx.mxUtils.createElement();
+					
+					var v1 = graph.insertVertex(graph.getDefaultParent(), null, "Yep", pt.x, pt.y, 70, 10, '');
+					v1.setConnectable(false);		//Poniendolo a true se conectan las cajas mediante las flechas internas
+
+				}
+
+				var img = this.toolbar.addMode(null, image, functArrow);
+				mx.mxUtils.makeDraggable(img, this.graph, functArrow);
+
+			break;
+
+		}
+
+		/*var functMainSquare = function(graph: mxgraph.mxGraph, evt, cell)
 		{
 			graph.stopEditing(false);
 	
@@ -122,15 +216,17 @@ private addToolbarItem(image)
 
 			//var xml = mx.mxUtils.createElement();
 			
-			graph.insertVertex(graph.getDefaultParent(), null, );
+			var v1 = graph.insertVertex(graph.getDefaultParent(), null, "Yep", pt.x, pt.y, 120, 70, '');
+			v1.setConnectable(false);		//Poniendolo a true se conectan las cajas mediante las flechas internas*/
+
+			/*var v2 = graph.insertVertex(graph.getDefaultParent(), null, "Duh", pt.x, pt.y, 50, 50);
+			v2.setConnectable(false);*/
 
 		}
 	
 		// Creates the image which is used as the drag icon (preview)
-		var img = this.toolbar.addMode(null, image, funct);
-		mx.mxUtils.makeDraggable(img, this.graph, funct);
+		/*var img = this.toolbar.addMode(null, image, functMainSquare);
+		mx.mxUtils.makeDraggable(img, this.graph, functMainSquare);*/
 	}
-
-}
 
 
