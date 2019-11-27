@@ -116,7 +116,7 @@ private addToolbarItem(image, type)
 		// Function that is executed when the image is dropped on
 		// the graph. The cell argument points to the cell under
 		// the mousepointer if there is one.
-
+		
 		switch(type){
 
 			case 1:
@@ -130,8 +130,8 @@ private addToolbarItem(image, type)
 
 					//var xml = mx.mxUtils.createElement();
 					
-					var v1 = graph.insertVertex(graph.getDefaultParent(), null, "Yep", pt.x, pt.y, 120, 70, '');
-					v1.setConnectable(false);		//Poniendolo a true se conectan las cajas mediante las flechas internas
+					var vv1 = graph.insertVertex(graph.getDefaultParent(), null, "Yep", pt.x, pt.y, 120, 70, 'shape=rounded');
+					vv1.setConnectable(false);		//Poniendolo a true se conectan las cajas mediante las flechas internas
 
 					
 				}
@@ -152,8 +152,10 @@ private addToolbarItem(image, type)
 
 					//var xml = mx.mxUtils.createElement();
 					
-					var v1 = graph.insertVertex(graph.getDefaultParent(), null, "Yep", pt.x, pt.y, 50, 70, '');
-					v1.setConnectable(false);		//Poniendolo a true se conectan las cajas mediante las flechas internas
+					var v2 = graph.insertVertex(graph.getDefaultParent(), null, "Yep", pt.x, pt.y, 25, 25, 'resizable=0;');
+					v2.setConnectable(false);		//Poniendolo a true se conectan las cajas mediante las flechas internas
+					//v2.geometry.offset = new mx.mxPoint(-10, -10);
+					//v2.geometry.relative = true;		//Para no dejar que se mueva
 
 				}
 
@@ -173,8 +175,8 @@ private addToolbarItem(image, type)
 
 					//var xml = mx.mxUtils.createElement();
 					
-					var v1 = graph.insertVertex(graph.getDefaultParent(), null, "Yep", pt.x, pt.y, 30, 30, '');
-					v1.setConnectable(false);		//Poniendolo a true se conectan las cajas mediante las flechas internas
+					var v3 = graph.insertVertex(graph.getDefaultParent(), null, "Yep", pt.x, pt.y, 25, 25, 'resizable=0');
+					v3.setConnectable(false);		//Poniendolo a true se conectan las cajas mediante las flechas internas
 
 				}
 
@@ -194,8 +196,8 @@ private addToolbarItem(image, type)
 
 					//var xml = mx.mxUtils.createElement();
 					
-					var v1 = graph.insertVertex(graph.getDefaultParent(), null, "Yep", pt.x, pt.y, 70, 10, '');
-					v1.setConnectable(false);		//Poniendolo a true se conectan las cajas mediante las flechas internas
+					var v4 = graph.insertVertex(graph.getDefaultParent(), null, "Yep", pt.x, pt.y, 70, 10, '');
+					v4.setConnectable(false);		//Poniendolo a true se conectan las cajas mediante las flechas internas
 
 				}
 
